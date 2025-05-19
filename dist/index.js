@@ -268,10 +268,10 @@ function runImpl() {
         if (!currentCommit) {
             throw new Error(`Commit ${process.env.GITHUB_SHA} not found`);
         }
-        if (isTriggeredByAction(currentCommit)) {
-            ghActions.info('Commit was triggered by the action, skip to prevent a loop');
-            return;
-        }
+        // if (isTriggeredByAction(currentCommit)) {
+        //     ghActions.info('Commit was triggered by the action, skip to prevent a loop');
+        //     return;
+        // }
         if (!fs.existsSync(actionInputs_1.actionInputs.templateYmlFile)) {
             throw new Error(`${actionInputs_1.actionInputs.templateYmlFile} file doesn't exist`);
         }
